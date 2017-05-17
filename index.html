@@ -8,11 +8,31 @@
       height: 100%; width: 100%;
     }
   </style>
+  <script>
+    var idzIframe = document.getElementById('idzIframe');
+    idzIframe.onload = function (event) {
+      console.log(event);
+      var iframe = event.target;
+      iframe.contentWindow.eval('window.document.body.style.background="blue";')
+
+
+    }
+    /*
+var style=document.createElement('style');
+style.type='text/css';
+if(style.styleSheet){
+    style.styleSheet.cssText='your css styles';
+}else{
+    style.appendChild(document.createTextNode('your css styles'));
+}
+document.getElementsByTagName('head')[0].appendChild(style);
+*/
+  </script>
 </head>
 <body>
   <p>
     Here is an iframe.
   </p>  
-  <iframe src="https://ha.iadvize.com/pupitre"></iframe>
+  <iframe id="idzIframe" src="https://ha.iadvize.com/pupitre"></iframe>
 </body>
 </html>
